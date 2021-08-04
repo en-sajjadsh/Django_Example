@@ -1,0 +1,7 @@
+# Win stuff
+.idea/
+
+# Virtualenv
+venv/
+
+# Database
