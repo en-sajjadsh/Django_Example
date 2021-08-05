@@ -5,3 +5,7 @@
 venv/
 
 # Database
+db.sqlite3
+
+#migrations
+blog/migrations/
