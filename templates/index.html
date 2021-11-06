@@ -1,946 +1,889 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>SajjadSH</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-  <link href="sta/img/logo.jpg" rel="icon">
+    <meta charset="utf-8">
+    <title>SajjadSH {{ title }}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <link href="{% static 'img/logo.jpg'%}" rel="icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
 
-  <!-- Libraries CSS Files -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <!-- Libraries CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css'%}" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
 
 
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
 
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/mobile-nav/mobile-nav.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
-  <script src="lib/lightbox/js/lightbox.min.js"></script>
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-  <script src="js/FontAwesome.js" crossorigin="anonymous"></script>
+    <!-- JavaScript Libraries -->
+    <script src="{% static 'lib/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'lib/jquery/jquery-migrate.min.js'%}"></script>
+    <script src="{% static 'lib/bootstrap/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'lib/easing/easing.min.js'%}"></script>
+    <script src="{% static 'lib/mobile-nav/mobile-nav.js'%}"></script>
+    <script src="{% static 'lib/wow/wow.min.js'%}"></script>
+    <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+    <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js'%}"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="{% static 'contactform/contactform.js'%}"></script>
+    <script src="{% static 'js/FontAwesome.js'%}" crossorigin="anonymous"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
 
-  <script>
-    L_NO_TOUCH = false;
-    L_DISABLE_3D = false;
-  </script>
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
 
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
-  <!-- Scripts.js -->
-  <script src="js/scripts.js"></script>
+    <link href="">
+
+    <!-- Template Main Javascript File -->
+    <script src="{% static 'js/main.js'%}"></script>
+    <!-- Scripts.js -->
+    <script src="{% static 'js/scripts.js'%}"></script>
 </head>
+<body >
+{#    <div id="spinner">#}
+{#        <div class="spinner-grow text-primary"></div>#}
+{#    </div>#}
 
-<body onload="myFunction()">
-  <div id="spinner">
-    <div class="spinner-grow text-primary"></div>
-  </div>
-
-  <!--==========================
-  Header
-  ============================-->
-  <header id="header" class="fixed-top">
+<header id="header" class="fixed-top">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="logo float-right">
-          <a href="index.html" class="scrollto"><h3> SajjadSH
-            <img src="img/logo.jpg" alt="SajjadSH" class="img-fluid"></h3></a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="logo float-right">
+                <a href="/home" class="scrollto"><h3> SajjadSH
+                    <img src="{% static 'img/logo.jpg'%}" alt="SajjadSH" class="img-fluid"></h3></a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link
+                        {% if title == "Home page" %}
+                            active
+                        {% endif %}
+                        " href="/home">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarServices">
+                            {% for serv,val in services.items %}
+                                {% if serv == "service" %}
+                                    {% for vl in val %}
+                                        <a class="dropdown-item openservice" href="/home#services" data-toggle="modal"
+                                           data-id="{{ vl.type }}" data-target="#services">{{ vl.name }}</a>
+                                        <div class="dropdown-divider"></div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle
+                        {% if title == "Learn page" %}
+                            active
+                        {% endif %}
+                        " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Learn
+                        </a>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Services
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarServices">
-                <a class="dropdown-item disabled" href="#">programming languages</a>
-                <a class="dropdown-item" href="#">Java</a>
-                <a class="dropdown-item" href="#">Python</a>
-                <a class="dropdown-item" href="#">C#</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item disabled" href="#">programming platforms</a>
-                <a class="dropdown-item" href="#">Windows</a>
-                <a class="dropdown-item" href="#">Linux</a>
-                <a class="dropdown-item" href="#">MacOS</a>
-                <a class="dropdown-item" href="#">Android</a>
-                <a class="dropdown-item" href="#">IOS</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Network</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Learn
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Java</a>
-                <a class="dropdown-item" href="#">Python</a>
-                <a class="dropdown-item" href="#">C#</a>
-                <a class="dropdown-item" href="#">Android</a>
-                <a class="dropdown-item" href="#">Windows</a>
-                <a class="dropdown-item" href="#">Linux</a>
-                <a class="dropdown-item" href="#">Network</a>
-                <div class="dropdown-divider"></div>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#news">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#about-me">About us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#contact-us">Contact us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#sign-in">Sing in</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#sign-up">Sing up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" hidden href="#">Account</a>
-            </li>
-          </ul>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% for k,v in services.items %}
+                                {% if k == "service" %}
+                                    {% for val in v.values %}
+                                        <a class="dropdown-item" href="/learn?name={{ val.name }}">{{ val.name }}</a>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endfor %}
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/learn">Learns</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link
+                        {% if title == "News page" %}
+                            active
+                        {% endif %}
+                        " href="/news" >News</a>
 
-        </div>
-      </nav>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home#about-me" data-toggle="modal" data-target="#about-me">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home#contact-us" data-toggle="modal" data-target="#contact-us">Contact us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home#singin" data-toggle="modal" data-target="#sign-in">Sing in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/home#singup" data-toggle="modal" data-target="#sign-up">Sing up</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarAccount">
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#"></a>
+                            <a class="dropdown-item" href="#"></a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/exit">Exit</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <!--Modal dialod-->
-  <div class="modal fade" id="news" tabindex="-1" role="dialog">
+<!--Modal dialod-->
+<div class="modal fade" id="services" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content container">
-        <div class="modal-header" >
-          <button type="button" class="close float-right" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title float-left">News</h4>
+        <div class="modal-content">
+            <div class="modal-header" >
+                <button type="button" class="close float-right" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title float-left">Service</h4>
+            </div>
+            <div class="modal-body">
+                <h1 id="name"></h1>
+{#                {% for serv,val in services.items %}#}
+{#                    {% if serv == "service" %}#}
+{#                        {% for vl in val %}#}
+{#                            <div class="Service">#}
+{#                                <h2 class="name"></h2>#}
+{#                                <h6 class="hidden type"></h6>#}
+{#                                <img src="{{ MEDIA_URL}}" class="pic" alt="">#}
+{#                                <br>#}
+{#                                <p class="dis"></p>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    {% endif %}#}
+{#                {% endfor %}#}
+            </div>
         </div>
-        <div class="modal-body row">
-          <div id="news-manage">
-            <div class="box-news">
-              <div class="box">
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
-            </div>
-            <div class="box-news">
-              <div class="box">
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
-            </div>
-            <div class="box-news">
-              <div class="box">
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
-            </div>
-            <div class="box-news">
-              <div class="box">
-                <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-outline-primary scrollto">more</button>
-        </div>
-        <div class="modal-footer">
-          <div style="margin-right: 100px">
-            1399<i class="bi bi-slash"></i>12<i class="bi bi-slash"></i>23  -----
-            2021<i class="bi bi-slash"></i>14<i class="bi bi-slash"></i>03
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="about-me" tabindex="-1" role="dialog">
+</div>
+<div class="modal fade" id="about-me" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">About us</h4>
-        </div>
-        <div class="modal-body">
-          <div class="sections">
-            <div class="sections-wrapper clearfix">
-              <section id="section2">
-                <div class="container-fluid">
-                  <div class="about">
-                    <h2 class="titles">درباره من</h2>
-                    <h3 class="small-margin-bottom">ایمان مدائنی</h3>
-                    <h5>برنامه نویس و مدیر پروژه</h5>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                  </div>
-                  <div class="about-fa">
-                    <h3 class="small-margin-bottom">ایمان مدائنی</h3>
-                    <h5>برنامه نویس و مدیر پروژه</h5>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                  </div>
-                  <div class="signature"></div>
-                  <ul class="list-unstyled ">
-                    <li><b>تاریخ تولد:</b> 24 Jan 1989</li>
-                    <li><b>تلفن:</b>09124140939</li>
-                    <li><b>ایمیل:</b> Sility@example.com</li>
-                    <li><b>آدرس:</b>تهران-شریعتی-خیابان ملک</li>
-                    <li><b>وب سایت:</b> http://www.barnamenevisan.org</li>
-                  </ul>
-                  <br class="spacer">
-                  <ul class="list-unstyled about-contact">
-                    <li><b>تاریخ تولد:</b> 24 Jan 1989</li>
-                    <li><b>تلفن:</b>09124140939</li>
-                    <li><b>ایمیل:</b> Sility@example.com</li>
-                    <li><b>آدرس:</b>تهران-شریعتی-خیابان ملک</li>
-                    <li><b>وب سایت:</b> http://www.barnamenevisan.org</li>
-                  </ul>
-                  <div class="spacer"></div>
-                  <h3 class="titles">چه کاری انجام می دهم</h3>
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div class="service">
-                        <div class="icon"><i class="ion-monitor"></i></div>
-                        <h5>توسعه دهنده برنامه های pc</h5>
-                        <h6>windows -<br>linux -<br>mac</h6>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="service">
-                        <div class="icon"><i class="ion-iphone"></i></div>
-                        <h5>توسعه دهنده برنامه های موبایل</h5>
-                        <h6>android</h6>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <div class="service">
-                        <div class="icon"><i class="ion-paintbrush"></i></div>
-                        <h5>طراحی</h5>
-                      </div> <!-- end .service -->
-                    </div> <!-- end .col-sm-4 -->
-                  </div>
-                </div>
-              </section>
-              <section id="section3">
-                <div class="container-fluid">
-                  <div class="row skill">
-                    <h2 class="titles1">ارزش های مهارت من</h2>
-                    <div class="col-lg-12 col-sm-12 ">
-                      <h4>مهارت های فنی</h4>
-                      <label class="progress-bar-label">وردپرس</label>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                          <span>85%</span>
-                        </div>
-                      </div>
-                      <label class="progress-bar-label">فتوشاپ</label>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">
-                          <span>99%</span>
-                        </div>
-                      </div>
-                      <label class="progress-bar-label">پی اچ پی</label>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                          <span>75%</span>
-                        </div>
-                      </div>
-                      <label class="progress-bar-label">جاوااسکریپت</label>
-                      <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
-                          <span>67%</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-12 col-sm-12">
-                      <h4>دانش فردی</h4>
-                      <div class="row align1">
-                        <div class="col-md-6 col-lg-6 col-xl-5 align2">
-                          <ul class="list-icons bold-list">
-                            <li><i class="md-arrow-forward"></i>نصب و راه اندازی</li>
-                            <li><i class="md-arrow-forward"></i>مدیریت پروژه</li>
-                            <li><i class="md-arrow-forward"></i>طراحی رابط کاربری</li>
-                            <li><i class="md-arrow-forward"></i>لایه بندی</li>
-                            <li><i class="md-arrow-forward"></i>برنامه نویسی موبایل</li>
-                            <li><i class="md-arrow-forward"></i>طراحی گرافیک</li>
-                            <li><i class="md-arrow-forward"></i>سئو و بهینه سازی</li>
-                          </ul>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-5 col-xl-5 align2">
-                          <ul class="list-icons bold-list">
-                            <li><i class="md-arrow-forward"></i>راه اندازی شبکه</li>
-                            <li><i class="md-arrow-forward"></i>طراحی لوگو</li>
-                            <li><i class="md-arrow-forward"></i>انیمیشن</li>
-                            <li><i class="md-arrow-forward"></i>عکاسی</li>
-                            <li><i class="md-arrow-forward"></i>بومی سازی قالب</li>
-                            <li><i class="md-arrow-forward"></i>برنامه نویسی سرور</li>
-                            <li><i class="md-arrow-forward"></i>راه اندازی فروشگاه</li>
-                          </ul>
-                        </div>
-                      </div>
-                      <br>
-                      <div class="row align" >
-                        <div class="col-md-6 col-lg-4 col-xl-4 align2">
-                          <ul class="list-icons bold-list">
-                            <li><i class="md-arrow-forward"></i>نصب و راه اندازی</li>
-                            <li><i class="md-arrow-forward"></i>مدیریت پروژه</li>
-                            <li><i class="md-arrow-forward"></i>طراحی رابط کاربری</li>
-                            <li><i class="md-arrow-forward"></i>لایه بندی</li>
-                            <li><i class="md-arrow-forward"></i>برنامه نویسی موبایل</li>
-                            <li><i class="md-arrow-forward"></i>طراحی گرافیک</li>
-                            <li><i class="md-arrow-forward"></i>سئو و بهینه سازی</li>
-                          </ul>
-                        </div>
-                        <div class="col-md-6 col-lg-4 col-xl-4 align2">
-                          <ul class="list-icons bold-list">
-                            <li><i class="md-arrow-forward"></i>راه اندازی شبکه</li>
-                            <li><i class="md-arrow-forward"></i>طراحی لوگو</li>
-                            <li><i class="md-arrow-forward"></i>انیمیشن</li>
-                            <li><i class="md-arrow-forward"></i>عکاسی</li>
-                            <li><i class="md-arrow-forward"></i>بومی سازی قالب</li>
-                            <li><i class="md-arrow-forward"></i>برنامه نویسی سرور</li>
-                            <li><i class="md-arrow-forward"></i>راه اندازی فروشگاه</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <label class="progress-bar-label width-progerss"><h4>جاوااسکریپت</h4></label>
-                    <div class="progress width-progerss1">
-                      <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section id="section4">
-                <div class="container-fluid">
-                  <h2 class="titles">سابقه فعالیت</h2>
-                  <h5 class="titles">8 سال </h5>
-                  <div>
-                    <div class="experience-block clearfix">
-                      <div class="meta">
-                        <span class="year">تاکنون-2012</span>
-                        <span class="company">برنامه نویس</span>
-                      </div>
-                      <div class="content">
-                        <h5>لورم ایپسوم یا طرح‌نما</h5>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
-                      </div>
-                      <div class="content1">
-                        <h5>لورم ایپسوم یا طرح‌نما</h5>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. </p>
-                      </div>
-                      <div class="icon">
-                        <i class="ion-easel"></i>
-                      </div>
-                      <div class="line"></div>
-                    </div>
-
-                    <div class="experience-block clearfix">
-                      <div class="meta">
-                        <span class="year">2008 - 2012</span>
-                        <span class="company">طراح گرافیک</span>
-                      </div> <!-- end .meta -->
-                      <div class="content">
-                        <h5>طراح گرافیک</h5>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. </p>
-                      </div> <!-- end .content -->
-                      <div class="icon">
-                        <i class="ion-images"></i>
-                      </div> <!-- end .icon -->
-                      <div class="line"></div>
-                    </div> <!-- end .experience-block -->
-                    <div class="experience-block clearfix">
-                      <div class="meta">
-                        <span class="year">2006 - 2008</span>
-                        <span class="company">شروع کار</span>
-                      </div> <!-- end .meta -->
-                      <div class="content">
-                        <h5>برنامه نویس وب</h5>
-                        <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
-                      </div> <!-- end .content -->
-                      <div class="icon">
-                        <i class="ion-card"></i>
-                      </div> <!-- end .icon -->
-                    </div> <!-- end .experience-block -->
-                  </div> <!-- end .experience-timeline -->
-                </div> <!-- end .container -->
-              </section>
-              <section id="section5">
-                <div class="container-fluid">
-                  <h2 class="titles">میزان تحصیلات</h2>
-                  <div class="education clearfix ">
-                    <div class="item">
-                      <div class="marker"></div>
-                      <div class="content">
-                        <span>دانشگاه صنعتی شریف</span>
-                        <h4>مهندسی نرم افزار </h4>
-                      </div>
-                      <div class="year">2005 - 2006</div>
-                    </div>
-                    <div class="item">
-                      <div class="marker"></div>
-                      <div class="content">
-                        <span>دانشگاه صنعتی شریف</span>
-                        <h4>مهندسی نرم افزار </h4>
-                      </div>
-                      <div class="year">2005 - 2006</div>
-                    </div>
-                    <div class="item">
-                      <div class="marker"></div>
-                      <div class="content">
-                        <span>دانشگاه صنعتی شریف</span>
-                        <h4>مهندسی نرم افزار </h4>
-                      </div>
-                      <div class="year">2005 - 2006</div>
-                    </div>
-                    <div class="item">
-                      <div class="marker"></div>
-                      <div class="content">
-                        <span>دانشگاه صنعتی شریف</span>
-                        <h4>مهندسی نرم افزار </h4>
-                      </div>
-                      <div class="year">2005 - 2006</div>
-                    </div>
-                    <div class="line"></div>
-                  </div>
-
-                  <h2 class="titles">تفریحات و علاقه مندی ها</h2>
-                  <div class="favorites row">
-                    <div class="item col-lg-3 col-md-4 col-sm-5">
-                      <div class="icon-box">
-                        <div class="icon"><i class="ion-easel"></i></div>
-                        <h6>وب گشتی</h6>
-                      </div>
-                    </div>
-                    <div class="item col-lg-3 col-md-4 col-sm-5">
-                      <div class="icon-box">
-                        <div class="icon"><i class="ion-ios-camera-outline"></i></div>
-                        <h6>عکاسی</h6>
-                      </div>
-                    </div>
-                    <div class="item col-lg-3 col-md-4 col-sm-5">
-                      <div class="icon-box">
-                        <div class="icon"><i class="ion-plane"></i></div>
-                        <h6>مسافرت</h6>
-                      </div>
-                    </div>
-                    <div class="item col-lg-3 col-md-4 col-sm-5">
-                      <div class="icon-box">
-                        <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-                        <h6>کتاب خوانی</h6>
-                      </div>
-                    </div>
-                    <div class="item col-lg-3 col-md-4 col-sm-5">
-                      <div class="icon-box">
-                        <div class="icon"><i class="ion-ios-musical-notes"></i></div>
-                        <h6>موزیک</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">About us</h4>
             </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <div class ="container">
-            <div class="titles1">
-              Designed by <a href="index.html">SajjadSH</a>
+            <div class="modal-body">
+                <div class="sections">
+                    <div class="sections-wrapper clearfix">
+                        {% for key,val in about.items%}
+                            {% if key == "info" or key == "what" %}
+                                <section id="section2">
+                                    <div class="container-fluid">
+                                        {% if key == "info" %}
+                                            {% for vl in val %}
+                                                <script>var id_person = {{ vl.id }}</script>
+                                                <div class="about">
+                                                    <h2 class="titles">About me</h2>
+                                                    <h2 class="titles">{{ vl.fname }} {{ vl.lname }}</h2>
+                                                    <h3 class="small-margin-bottom">{{ vl.specialty }}</h3>
+                                                    <p class="titlesright">{{ vl.about }}</p>
+                                                </div>
+                                                <div class="signature"></div>
+                                                <div class="signature"></div>
+                                                <ul class="list-unstyled ">
+                                                    <li><b>Date of birth: {{ vl.born }}</b> </li>
+                                                    <li><b>Phone: {{ vl.phone }}</b> </li>
+                                                    <li><b>Email: {{ vl.email }}</b> </li>
+                                                    <li><b>Address: {{ vl.address }}</b> </li>
+                                                    <li><b>Web site:</b><a title="{{ vl.website }}" href="http://{{ vl.website }}"> {{ vl.website }}</a></li>
+                                                </ul>
+                                            {% endfor %}
+                                        <br class="spacer">
+                                        <h3 class="titles">What do I do?</h3>
+                                        {% elif key == "what" %}
+                                            {% for vl in val %}
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="service">
+                                                            <div class="icon"><i class="ion-monitor"></i></div>
+                                                            <h5 >{{ vl.special }}</h5>
+                                                            <h6 >{{ vl.about }}</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                </section>
+                            {% elif key == "skill" %}
+                                <section id="section3">
+                                    <div class="container-fluid">
+                                        <div class="row skill">
+                                            <h2 class="titles1">My Skills Values</h2>
+                                            <div class="col-lg-12 col-sm-12 ">
+                                                <h4>Technical skills</h4>
+                                                {% for vl in val %}
+                                                    {% if vl.type == 1 %}
+                                                        <label class="progress-bar-label">{{ vl.name }}</label>
+                                                        <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: {{ vl.value }}%;">
+                                                            <span>{{ vl.value }}%</span>
+                                                        </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </div>
+                                            <div class="col-lg-12 col-sm-12">
+                                                <h4>Individual knowledge</h4>
+                                                <div class="row align1">
+                                                    {% for vl in val %}
+                                                        {% if vl.type == 2 %}
+                                                            <div class="col-md-6 col-lg-6 col-xl-5 align2">
+                                                                <ul class="list-icons bold-list">
+                                                                    <li><i class="md-arrow-forward">{{ vl.name }}</i></li>
+                                                                </ul>
+                                                            </div>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <br><br>
+                                            <h4>Language skills</h4>
+                                            {% for vl in val %}
+                                                {% if vl.type == 3 %}
+                                                    <label class="progress-bar-label width-progerss"><h4>{{ vl.name }}</h4></label>
+                                                    <div class="progress width-progerss1">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: {{ vl.value }}%;">
+                                                            <span>{{ vl.value }}%</span>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </section>
+                            {% elif key == "experience" %}
+                                <section id="section4">
+                                    <div class="container-fluid">
+                                        <h2 class="titles">Experience</h2>
+                                        <h5 class="titles"></h5>
+                                        <div>
+                                            {% for vl in val %}
+                                                <div class="experience-block clearfix">
+                                                    <div class="meta">
+                                                        <span class="year"> {{ vl.dateStart }} - {{ vl.dateEnd }} </span>
+                                                        <span class="company">{{ vl.experience }}</span>
+                                                    </div> <!-- end .meta -->
+                                                    <div class="content">
+                                                        <h5>{{ vl.title }}</h5>
+                                                        <p>{{ vl.text }}</p>
+                                                    </div>
+                                                    <div class="icon">
+                                                        <i class="ion-compose"></i>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                     </div>
+                                </section>
+                            {% elif key == "education" or key == "entertainment"%}
+                                <section id="section5">
+                                    <div class="container-fluid">
+                                        {% if key == "education" %}
+                                            <h2 class="titles">Education rate</h2>
+                                            <div class="education clearfix ">
+                                                {% for vl in val %}
+                                                    <div class="item">
+                                                        <div class="marker"></div>
+                                                        <div class="content">
+                                                            <span>{{ vl.university }}</span>
+                                                            <h4>{{ vl.major }}</h4>
+                                                        </div>
+                                                        <div class="year"> {{ vl.dateStart }} - {{ vl.dateEnd }} </div>
+                                                    </div>
+                                                {% endfor %}
+                                                <div class="line"></div>
+                                            </div>
+                                        {% endif %}
+                                        {% if key == "entertainment" %}
+                                            <h2 class="titles">Entertainment and hobbies</h2>
+                                            <div class="favorites row">
+                                                {% for vl in val %}
+                                                    <div class="item col-lg-3 col-md-4 col-sm-5">
+                                                        <div class="icon-box">
+                                                            <div class="icon"><i class="{{ vl.pic }}"></i></div>
+                                                            <h6>{{ vl.value }}</h6>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </section>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="modal-footer">
+                <div class ="container">
+                    <div class="titles1">
+                        Designed by <a href="/home">SajjadSH</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="contact-us" tabindex="-1" role="dialog">
+</div>
+<div class="modal fade" id="contact-us" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">Contact Us</h4>
-        </div>
-        <div class="modal-body">
-          <section id="section8">
-            <div class="container">
-              <h2>با من در ارتباط باشید</h2>
-              <div class="row">
-                <div class="col-lg-5 col-md-12 col-sm-12">
-                  <div>
-                    <h5>آدرس من</h5>
-                    <ul class="list-icons list-unstyled">
-                      <li><i class="ion-ios-location-outline"></i>تهران،شریعتی<br />خیابان ملک،ایرانیاد</li>
-                      <li><i class="ion-iphone"></i>تلفن: +61 012 345 6789</li>
-                      <li><i class="ion-ios-email-outline"></i>ایمیل: <a href="mailto:example@gmail.com">example@gmail.com</a></li>
-                      <li><i class="ion-ios-home-outline"></i>وب سایت: <a href="">www.barnamenevisan.org</a></li>
-                    </ul>
-                  </div>
-                  <div class="float-dir">
-                    <h5>آدرس من</h5>
-                    <ul class="list-icons list-unstyled">
-                      <li><i class="ion-ios-location-outline"></i>تهران،شریعتی<br />خیابان ملک،ایرانیاد</li>
-                      <li><i class="ion-iphone"></i>تلفن: +61 012 345 6789</li>
-                      <li><i class="ion-ios-email-outline"></i>ایمیل: <a href="mailto:example@gmail.com">example@gmail.com</a></li>
-                      <li><i class="ion-ios-home-outline"></i>وب سایت: <a href="">www.barnamenevisan.org</a></li>
-                    </ul>
-                    <div class="spacer"></div>
-                    <div class="social-icons">
-                      <a href="" class="social-icon"><i class="fa fa-facebook"></i></a>
-                      <a href="" class="social-icon"><i class="fa fa-twitter"></i></a>
-                      <a href="" class="social-icon"><i class="fa fa-google-plus"></i></a>
-                      <a href="" class="social-icon"><i class="fa fa-behance"></i></a>
-                      <a href="" class="social-icon"><i class="fa fa-dribbble"></i></a>
-                    </div>
-                  </div>
-                  <br>
-                </div>
-                <div class="col-lg-7 col-md-12 col-sm-12">
-                  <h5>فرم تماس</h5>
-                  <form action="#" method="post" class="form-horizontal contact-form">
-                    <div class="form-group">
-                      <label class="col-sm-2 control-label">نام</label>
-                      <div class="col-sm-10 input-text">
-                        <input type="text" class="contact-name" name="contact-name" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-2 control-label">ایمیل</label>
-                      <div class="col-sm-10 input-text">
-                        <input type="email" class="contact-email" name="contact-email" />
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-2 control-label">پیام</label>
-                      <div class="col-sm-10 input-text">
-                        <textarea name="contact-message" class="contact-message" rows="3"></textarea>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-10 col-sm-offset-2">
-                        <button type="submit" id="btn" class="btn btn-primary">ارسال پیام</button>
-                      </div>
-                    </div>
-                    <div class="contact-loading alert alert-info form-alert">
-                      <span class="message">بارگزاری...</span>
-                      <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
-                    </div>
-                    <div class="contact-success alert alert-success form-alert">
-                      <span class="message">Success!</span>
-                      <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
-                    </div>
-                    <div class="contact-error alert alert-danger form-alert">
-                      <span class="message">Error!</span>
-                      <button type="button" class="close" data-hide="alert" aria-label="Close"><i class="fa fa-times"></i></button>
-                    </div>
-                  </form>
-                </div>
-              </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Contact Us</h4>
             </div>
-          </section>
+            <div class="modal-body">
+                <section id="section8">
+                    <div class="container">
+                        <h2>Get in contact with me</h2>
+                        <div class="row">
+                            <div class="col-lg-5 col-md-12 col-sm-12">
+                                <div>
+                                    <ul class="list-icons list-unstyled">
+                                        <li><i class="ion-ios-location-outline"></i>Address: {{ contact.address }} </li>
+                                        <li><i class="ion-iphone"></i>Phone: {{ contact.phone }}</li>
+                                        <li><i class="ion-ios-email-outline"></i>Email: <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+                                        <li><i class="ion-ios-world-outline"></i>Website: <a href="http://{{ contact.website }}">{{ contact.website }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-7 col-md-12 col-sm-12">
+                                <h5>Contact Form </h5>
+                                <form name="form" action="/home/contact" method="post" class="form-horizontal contact-form" onsubmit="return validateForm()">
+                                    {% csrf_token %}
+                                    {{ form_contant }}
+{#                                    {% csrf_token %}#}
+{#                                    <div class="form-group">#}
+{#                                        <label class="col-sm-2 control-label">Name</label>#}
+{#                                        <div class="col-sm-10 input-text">#}
+{#                                            <input type="text" class="contact-name" name="contact-name" />#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="form-group">#}
+{#                                        <label class="col-sm-2 control-label">Email</label>#}
+{#                                        <div class="col-sm-10 input-text">#}
+{#                                            <input type="email" class="contact-email" name="contact-email" />#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="form-group">#}
+{#                                        <label class="col-sm-2 control-label">Text</label>#}
+{#                                        <div class="col-sm-10 input-text">#}
+{#                                            <textarea name="contact-message" class="contact-message" rows="3"></textarea>#}
+{#                                        </div>#}
+{#                                    </div>#}
+                                    <div class="form-group">
+                                        <div class="col-sm-10 col-sm-offset-2">
+                                            <button type="submit" id="btn" class="btn btn-primary">send</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="sign-in" tabindex="-1" role="dialog">
+</div>
+<div class="modal fade" id="sign-in" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">Sign in</h4>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Sign in</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-6 col-md-12 col-sm-12 sign">
+                    <form name="formsignin" action="/account/signin" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignin()">
+                        {% csrf_token %}
+                        {{ form_password }}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">username</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="text" class="contact-name" name="username" />#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">password</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="password" class="contact-email" name="password" />#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <button type="submit" id="btn_signin" class="btn btn-primary">sign in</button>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            I'm don't have Account.
+                            <a href="#" data-dismiss="modal" data-toggle="modal" id="signup" data-target="#sign-up" class="form-check-label">Sign up</a>
+                            <br><br>
+                        </div>
+                        <div class="form-check">
+                            <a href="#" data-dismiss="modal" data-toggle="modal" id="forgotPassword" data-target="#forget" class="form-check-label">Forget password</a>
+                            <br><br>
+                        </div>
+                    </form>
+            </div>
         </div>
-        <div class="modal-body">
-          <!--about-->
         </div>
-        <div class="modal-footer">
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="modal fade" id="sign-up" tabindex="-1" role="dialog">
+</div>
+<div class="modal fade" id="sign-up" tabindex="-1" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" >
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title">Sign up</h4>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Sign up</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-6 col-md-12 col-sm-12 sign">
+                    <form name="form-signup" action="/account/signup" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignup()">
+                        {% csrf_token %}
+                        {{ form_signup }}
+                        {{ form_password }}
+                        <label for="">Check Password</label>
+                        <input type="password" id="confirm-password" name="confrim-password" maxlength="50">
+                        <span id="msg-confrim"></span>
+                        <div id="message">
+                            <h3>Password must contain the following:</h3>
+                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                            <p id="number" class="invalid">A <b>number</b></p>
+                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                        </div>
+
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label" for="confirm-password">check password</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="password" class="contact-name" id="confirm-password" name="confrim-password" />#}
+{#                            </div>#}
+{#                            <span id="msg-confrim"></span>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">name</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="text" class="contact-name" name="signup-name" />#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">username</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="text" class="contact-name" name="signup-username" />#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label" for="signup-password">password</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="password" class="contact-name" id="signup-password" name="signup-password" />#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">email</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="email" class="contact-name" name="signup-email" required/>#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <button type="submit" id="btn_signup" class="btn btn-primary">sign in</button>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            I have Account.
+                            <a href="#" data-dismiss="modal" data-toggle="modal" id="signin" data-target="#sign-in" class="form-check-label">Sign in</a>
+                            <br><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-          <!--about-->
-        </div>
-        <div class="modal-footer">
-        </div>
-      </div>
     </div>
-  </div>
-
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro" class="clearfix">
-    <div class="container">
-
-      <div class="intro-img">
-        <img src="img/intro-img.svg" alt="" class="img-fluid">
-      </div>
-
-      <div class="intro-info">
-        <h2>Start learn <br><span>Programming </span><br>for your business!</h2>
-        <div>
-          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+</div>
+<div class="modal fade" id="forget" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" >
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">Forget Password</h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-6 col-md-12 col-sm-12 sign">
+                    <form name="formforget" action="/account/forget" method="post" class="form-horizontal contact-form" onsubmit="return validateFormForget()">
+                        {% csrf_token %}
+                        {{ form_forget_pass }}
+                        {{ form_forget_user }}
+{#                        <div class="form-group">#}
+{#                            <label class="col-sm-2 control-label">email</label>#}
+{#                            <div class="col-sm-10 input-text">#}
+{#                                <input type="email" class="contact-name" name="email1" />#}
+{#                            </div>#}
+{#                        </div>#}
+                        <div class="form-group">
+                            <div class="col-sm-10 col-sm-offset-2">
+                                <button type="submit" id="btn_forget" class="btn btn-primary">send request</button>
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <a href="#" data-dismiss="modal" data-toggle="modal" id="sign" data-target="#sign-up" class="form-check-label">Sign up</a>
+                            <br><br>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </div>
-
     </div>
-  </section>
-  <div class="container">
-    <div class="row ">
-      <main id="main" class="col-lg-8 col-md-12 col-sm-12">
-        <!--==========================
-          About Us Section
-        ============================-->
-        <section id="main-page">
+</div>
 
+{% block home %}
+{% endblock %}
 
-          <div class="container">
-            <div class="row about-container">
-              <div class="col-lg-7 content order-lg-1 order-2">
-                <h4>Python</h4>
-                <p>
-                  Python is a popular programming language. It was created by Guido van Rossum, and released in 1991.<br>
-                  It is used for:<br>
-                  web development (server-side),<br>
-                  software development,<br>
-                  mathematics,<br>
-                  system scripting.
-                </p>
-
-                <div class="icon-box wow fadeInUp">
-                  <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-                  <h4 class="title">What can Python do?</h4>
-                  <p class="description">Python can be used on a server to create web applications.<br>
-                    Python can be used alongside software to create workflows.<br>
-                    Python can connect to database systems. It can also read and modify files.<br>
-                    Python can be used to handle big data and perform complex mathematics.<br>
-                    Python can be used for rapid prototyping, or for production-ready software development.</p>
-                </div>
-
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-                  <div class="icon"><i class="fa fa-photo"></i></div>
-                  <h4 class="title">Why Python?</h4>
-                  <p class="description">Python works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc).<br>
-                    Python has a simple syntax similar to the English language.<br>
-                    Python has syntax that allows developers to write programs with fewer lines than some other programming languages.<br>
-                    Python runs on an interpreter system, meaning that code can be executed as soon as it is written. This means that prototyping can be very quick.<br>
-                    Python can be treated in a procedural way, an object-oriented way or a functional way.</p>
-                </div>
-
-                <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-                  <div class="icon"><i class="fa fa-bar-chart"></i></div>
-                  <h4 class="title">Good to know!</h4>
-                  <p class="description">The most recent major version of Python is Python 3, which we shall be using in this tutorial. However, Python 2, although not being updated with anything other than security updates, is still quite popular.<br>
-                    In this tutorial Python will be written in a text editor. It is possible to write Python in an Integrated Development Environment, such as Thonny, Pycharm, Netbeans or Eclipse which are particularly useful when managing larger collections of Python files.</p>
-                </div>
-
-                <div>
-                  <a href="" class="btn btn-outline-primary scrollto">Get Started</a>
-                </div>
-
-              </div>
-              <div class="col-lg-5 background order-lg-2 order-1 wow fadeInUp">
-                <i class='fab fa-python' title="python"></i>
-              </div>
-            </div>
-            <br>
-            <br>
-            <div class="row about-container">
-              <div class="col-lg-5 wow fadeInUp">
-                <i class='fab fa-java' title="java"></i>
-              </div>
-              <div class="col-lg-7 wow fadeInUp pt-5 pt-lg-0">
-                <h4>Java</h4>
-                <p>
-                  Java is a popular programming language, created in 1995.<br>
-                  It is owned by Oracle, and more than 3 billion devices run Java.<br>
-                  It is used for:<br>
-                  Mobile applications (specially Android apps)<br>
-                  Desktop applications<br>
-                  Web applications<br>
-                  Web servers and application servers<br>
-                  Games<br>
-                  Database connection<br>
-                  And much, much more!
-                </p>
-
-                <div class="icon-box wow fadeInUp">
-                  <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-                  <h4 class="title">Why Use Java?</h4>
-                  <p class="description">
-                    Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)<br>
-                    It is one of the most popular programming language in the world<br>
-                    It is easy to learn and simple to use<br>
-                    It is open-source and free<br>
-                    It is secure, fast and powerful<br>
-                    It has a huge community support (tens of millions of developers)<br>
-                    Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs<br>
-                    As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa<br>
-                  </p>
-                </div>
-
-                <div>
-                  <a href="" class="btn btn-outline-primary scrollto">Get Started</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section><!-- #about -->
-
-        <!--==========================
-          Why Us Section
-        ============================-->
-        <section id="why-us" class="wow fadeIn">
-          <div class="container">
-            <header class="section-header">
-              <h3>Why choose us?</h3>
-              <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
-            </header>
-
-            <div class="row counters">
-
-              <div class="col-lg-4 col-6 text-center">
-                <span data-toggle="counter-up">274</span>
-                <p>Videos</p>
-              </div>
-
-              <div class="col-lg-4 col-6 text-center">
-                <span data-toggle="counter-up">421</span>
-                <p>Clients</p>
-              </div>
-
-              <div class="col-lg-4 col-6 text-center">
-                <span data-toggle="counter-up">1,364</span>
-                <p>followers</p>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-      </main>
-
-      <aside id="aside" class="col-lg-4 col-md-12 col-sm-12">
-        <div  class="news">
-          <header class="section-header">
-            <h3>News</h3>
-          </header>
-          <div>
-            <div class="box">
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-
-            <div class="box">
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div>
-            <a href="" class="btn btn-get-started  scrollto">Get Started</a>
-          </div>
-        </div>
-        <div class="services">
-          <header class="section-header">
-            <h3>Services</h3>
-            <p>service</p>
-          </header>
-          <div>
-            <div class="box">
-              <h4 class="title"><a href="#" data-toggle="modal" data-target="#service">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-            <div class="box">
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-
-            <!--Modal dialod-->
-            <div class="modal fade" id="service" tabindex="-1" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">News</h4>
-                  </div>
-                  <div class="modal-body">
-                    <!--about-->
-                  </div>
-                  <div class="modal-footer">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </div>
-
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
+<footer id="footer">
     <div class="footer-top">
-      <div class="container">
-        <div class="row">
+        <div class="container">
+            <div class="row">
 
-          <div class="col-lg-4 col-md-6 col-sm-12 footer-info">
-            <h4>Location</h4>
-            <div class="map mb-4 mb-lg-0">
-              <div class="map folium-map" id="map_440021db84dc4c32909dc62f23690747" ></div>
+                <div class="col-lg-4 col-md-6 col-sm-12 footer-info">
+                    <h4>Location</h4>
+                    <div class="map mb-4 mb-lg-0">
+                        <div class="map folium-map" id="map_440021db84dc4c32909dc62f23690747" ></div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-sm-12 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="learn" data-toggle="modal" data-target="#learn">Learn</a></li>
+                        <li><a href="news">News</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#about-me">About us</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#contact-us">Contact us</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#sign-in">sing in</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#sign-up">sing up</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-5 col-sm-12 footer-newsletter">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Kermanshah, payam noor university<br>
+                        <strong>Phone:</strong> +98 918 225 8227<br>
+                        <strong>Email:</strong> sajjadsh1223@gmail.com<br>
+                    </p>
+                    <br>
+
+                    <div class="social-links">
+                        <a href="https://twitter.com/" class="twitter"><i class='fab fa-twitter'></i></a>
+                        <a href="https://www.facebook.com/" class="facebook"><i class='fab fa-facebook'></i></a>
+                        <a href="https://www.instagram.com/" class="instagram"><i class='fab fa-instagram'></i></a>
+                        <a href="https://www.telegram.org/" class="telegram"><i class='fab fa-telegram-plane'></i></a>
+                        <a href="https://www.linkedin.com/" class="linkedin"><i class='fab fa-linkedin-in'></i></a>
+                    </div>
+                </div>
+
             </div>
-          </div>
-
-          <div class="col-lg-3 col-md-5 col-sm-12 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#news">News</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#about-me">About us</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#contact-us">Contact us</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#sign-in">sing in</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#sign-up">sing up</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-5 col-sm-12 footer-newsletter">
-            <h4>Contact Us</h4>
-            <p>
-              Kermanshah, payam noor university<br>
-              <strong>Phone:</strong> +98 918 225 8227<br>
-              <strong>Email:</strong> sajjadsh1223@gmail.com<br>
-            </p>
-            <br>
-
-            <div class="social-links">
-              <a href="#" class="twitter"><i class='fab fa-twitter'></i></a>
-              <a href="#" class="facebook"><i class='fab fa-facebook'></i></a>
-              <a href="#" class="instagram"><i class='fab fa-instagram'></i></a>
-              <a href="#" class="telegram"><i class='fab fa-telegram-plane'></i></a>
-              <a href="#" class="linkedin"><i class='fab fa-linkedin-in'></i></a>
-            </div>
-          </div>
-
         </div>
-      </div>
     </div>
 
     <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong>SajjadSH</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="index.html">SajjadSH</a>
-      </div>
+        <div class="copyright">
+            &copy; Copyright <strong>SajjadSH</strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="home">SajjadSH</a>
+        </div>
     </div>
-  </footer>
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+</footer>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-  <script>
+
+<script>
+    $(document).on("click" , ".openservice" , function (){
+        const value = $(this).data('id');
+        if (value === {{ vl.type }}){
+            $("#services #name").val({{ vl.name }})
+        }
+    });
+</script>
+<script>
+    $(document).on("click" , "service" , function (){
+        var value = $(this).data('Id');
+        $("#services #service-id").val(value)
+    });
+</script>
+<script>
     var myVar;
 
     function myFunction() {
-      myVar = setTimeout(showPage, 100);
+        myVar = setTimeout(showPage, 1000);
     }
 
     function showPage() {
-      document.getElementById("spinner").style.display = "none";
-      document.getElementById("header").style.display = "block";
+        document.getElementById("spinner").style.display = "none";
+        document.getElementById("header").style.display = "block";
     }
-  </script>
-  <script>
+</script>
+<script>
+    $('#services').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text(recipient)
+        modal.find('.modal-body h1').text(recipient)
+    })
+</script>
+<script>
 
     var map_440021db84dc4c32909dc62f23690747 = L.map(
-            "map_440021db84dc4c32909dc62f23690747",
-            {
-              center: [35.69766,51.40837],
-              crs: L.CRS.EPSG3857,
-              zoom: 12,
-              zoomControl: true,
-              preferCanvas: false,
-            }
+        "map_440021db84dc4c32909dc62f23690747",
+        {
+            center: [35.69766,51.40837],
+            crs: L.CRS.EPSG3857,
+            zoom: 12,
+            zoomControl: true,
+            preferCanvas: false,
+        }
     );
-
-
-
-
-
     var tile_layer_47729b19ba454c83a44f98ebed6ce0ef = L.tileLayer(
-            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-            {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
     ).addTo(map_440021db84dc4c32909dc62f23690747);
 
-  </script>
+</script>
 <!--  <script src="js/bootstrap.min.js"></script>-->
-  <!-- jQuery -->
-  <!--  <script src="js/jquery-1.11.2.min.js"></script>-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Inview -->
-  <script src="js/jquery.inview.min.js"></script>
-  <!-- SmoothScroll -->
-  <script src="js/smoothscroll.js"></script>
-  <!-- jQuery Knob -->
-  <script src="js/jquery.knob.min.js"></script>
-  <!-- google maps -->
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Inview -->
+<script src="{% static 'js/jquery.inview.min.js'%}"></script>
+<!-- SmoothScroll -->
+<script src="{% static 'js/smoothscroll.js'%}"></script>
+<!-- jQuery Knob -->
+<script src="{% static 'js/jquery.knob.min.js'%}"></script>
+<!-- google maps -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+    $('#s-password, #confirm-password').on('keyup', function () {
+        if ($('#s-password').val() === $('#confirm-password').val()) {
+            $('#msg-confrim').html('Matching').css('color', 'green');
+        } else
+            $('#msg-confrim').html('Not Matching').css('color', 'red');
+    });
+</script>
+<script>
+    function validateForm() {
+        var x = document.forms["contact-us"]["id_user"].value;
+        if (x === "") {
+            alert("Name must not be empty.");
+            return false;
+        }
+
+        var y = document.forms["contact-us"]["id_email"].value;
+        if (y === "") {
+            alert("Email must not be empty.");
+            return false;
+        }
+
+        var z = document.forms["contact-us"]["id_text"].value;
+        if (z === "") {
+            alert("Message must not be empty.");
+            return false;
+        }
+    }
+</script>
+<script>
+    function validateFormSignin() {
+
+        var user = document.forms["signin"]["id_user"].value;
+        if (user === "") {
+            alert("Username must not be empty.");
+            return false;
+        }
+
+        var pass = document.forms["signin"]["id_password"].value;
+        if (pass === "") {
+            alert("Password must not be empty.");
+            return false;
+        }
+    }
+</script>
+<script>
+    function validateFormSignup() {
+        var fname = document.forms["signup"]["id_fname"].value;
+        if (fname === "") {
+            alert("Name must not be empty.");
+            return false;
+        }
+        var lname = document.forms["signup"]["id_lname"].value;
+        if (lname === "") {
+            alert("Username must not be empty.");
+            return false;
+        }
+        var special = document.forms["signup"]["id_specialty"].value;
+        if (special === "") {
+            alert("Confrim Password must not be empty.");
+            return false;
+        }
+        var born = document.forms["signup"]["id_born"].value;
+        if (born === "") {
+            alert("Confrim Password must not be empty.");
+            return false;
+        }
+        var phone = document.forms["signup"]["id_phone"].value;
+        if (phone === "") {
+            alert("Confrim Password must not be empty.");
+            return false;
+        }
+        var email = document.forms["signup"]["id-email"].value;
+        if (email === "" || se === null) {
+            alert("Email must not be empty.");
+            return false;
+        }
+        var s_user = document.forms["signup"]["id-user"].value;
+        if (s_user === "" ) {
+            alert("Email must not be empty.");
+            return false;
+        }
+        var s_pass = document.forms["signup"]["id-password"].value;
+        if (s_pass === ""){
+            alert("Email must not be empty.");
+            return false;
+        }
+        var sc_pass = document.forms["signup"]["confirm-password"].value;
+        if (sc_pass === ""){
+            alert("Email must not be empty.");
+            return false;
+        }
+    }
+</script>
+<script>
+    function validateFormForget() {
+        var xf = document.forms["forget"]["id_user"].value;
+        if (xf === "") {
+            alert("Name must not be empty.");
+            return false;
+        }
+        var yf = document.forms["forget"]["id_email"].value;
+        if (yf === "") {
+            alert("Email must not be empty.");
+            return false;
+        }
+    }
+</script>
+<script>
+    var myInput = document.getElementById("confirm-password");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
+
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+        document.getElementById("message").style.display = "block";
+    }
+
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+        alert(myInput);
+        document.getElementById("message").style.display = "none";
+    }
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+        // Validate lowercase letters
+        var lowerCaseLetters = /[a-z]/g;
+        if(myInput.value.match(lowerCaseLetters)) {
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+        } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+        }
+
+        // Validate capital letters
+        var upperCaseLetters = /[A-Z]/g;
+        if(myInput.value.match(upperCaseLetters)) {
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+        } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+        }
+
+        // Validate numbers
+        var numbers = /[0-9]/g;
+        if(myInput.value.match(numbers)) {
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+        } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+        }
+
+        // Validate length
+        if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+        } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+        }
+    }
+</script>
 
 </body>
 </html>

@@ -15,8 +15,8 @@
 
 .spinner-grow {
   position: absolute;
-  top: 50%;
-  right: 45%;
+  top: 40%;
+  right: 47%;
   height: 70px;
   width: 70px;
   text-align: center;
@@ -28,7 +28,7 @@
 --------------------------------------------------------------*/
 
 body {
-  background: #fff;
+  background: #FFF;
   color: #444;
   font-family: "Open Sans", sans-serif;
 }
@@ -211,6 +211,7 @@ h6 {
   background: url("../img/intro-bg.png") center bottom no-repeat;
   background-size: cover;
   padding: 200px 0 120px 0;
+  margin-bottom: 50px;
 }
 
 
@@ -361,7 +362,7 @@ h6 {
 
 .main-nav .drop-down > a:after {
   content: "\f107";
-  font-family: FontAwesome;
+  font-family: "Open Sans", sans-serif;
   padding-left: 10px;
 }
 
@@ -424,7 +425,7 @@ h6 {
 
 .mobile-nav .drop-down > a:after {
   content: "\f078";
-  font-family: FontAwesome;
+  font-family: "Open Sans", sans-serif;
   padding-left: 10px;
   position: absolute;
   right: 15px;
@@ -736,6 +737,7 @@ h6 {
   background: #fff;
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
+  direction: ltr;
 }
 
 #aside .news{
@@ -1677,7 +1679,7 @@ h6 {
   direction: rtl;
   text-align: left;
   height: auto;
-  float: right;
+  /*float: right;*/
   padding: 30px 12px;
 }
 .sections-wrapper > section.no-padding-bottom {
@@ -1742,7 +1744,13 @@ h6 {
 
 .titles{
   text-align: center;
+  direction: ltr;
 }
+
+.titlesright {
+  direction: ltr;
+}
+
 .titles1 {
   margin-right: 75px;
 }
@@ -1844,7 +1852,7 @@ h6 {
 .width-progerss1 {
   width: 100%;
   margin-top: 20px;
-  height: 20px;
+  height: 15px;
 }
 .width-progerss1 .progress-bar {
   border-radius: 4px;
@@ -2417,12 +2425,28 @@ section#section3 .skill .titles1 {
 .input-group {
   margin-bottom: 28px;
 }
-.form-horizontal .control-label {
+.form-horizontal label {
   text-align: left;
+  display: block;
 }
 
-.form-horizontal .input-text {
+.form-horizontal input {
   /*float: right;*/
+  border-width: 0 0 1px 0;
+  border-color: #140df2;
+  width: 65%;
+}
+
+.form-horizontal textarea{
+  height: 150px;
+  border-color: #140df2;
+  width: 90%;
+}
+
+.form-horizontal textarea #id_About{
+  height: 150px;
+  border-color: #140df2;
+  width: 100%;
 }
 
 .button {
@@ -12633,4 +12657,117 @@ html, body {
   border-right: 7px solid transparent;
   border-bottom: 7px solid #FFF;
   transition: margin-left 0.25s ease-in-out;
+}
+
+.sign {
+  margin-left: 230px;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+#message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 10px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+
+.align-end{
+  text-align: end;
+  padding-right: 15px;
+}
+
+.scrollto{
+  padding-left: 15px;
+}
+
+#navbarSupportedContent {
+  margin-bottom: 55px;
+}
+
+/*@media (min-width: 992px){*/
+/*  .navbar-expand-lg .navbar-nav .dropdown-menu {*/
+/*    position: static;*/
+/*  }*/
+/*}*/
+
+/*button.navbar-toggler {*/
+/*  margin-bottom: 35px;*/
+/*}*/
+
+/*.container {*/
+/*  background-color: white;*/
+/*}*/
+
+ul.pagination.justify-content-center {
+  direction: ltr;
+}
+
+.card .rounded-top .rounded-bottom .rounded-left .rounded-right {
+  margin-bottom: 10px;
+}
+
+.about .card-img-top {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-bottom: 30px;
+  width: 300px;
+  height: 300px;
 }
