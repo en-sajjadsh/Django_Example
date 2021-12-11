@@ -8,7 +8,10 @@ venv/
 db.sqlite3
 
 #migrations
-home/migrations
+home/migrations/
+account/migrations/
+learn/migrations/
+news/migrations/
 
 #directory
 staticfiles/
