@@ -1,38 +1,30 @@
-from django.shortcuts import HttpResponse, render,redirect
+from django.shortcuts import render,redirect
 from . import forms
+from  django.contrib.auth.forms import UserCreationForm,AuthenticationForm
+
 
 
 
 def signup(request):
     if request.method == 'POST':
-        formUser = forms.formCreateUser(request.POST)
-        formPass = forms.formCreateUserPassword(request.POST)
-        if formUser.is_valid() and formPass.is_valid():
-            form_u = formUser.save()
-            form_p = formPass.save(commit=False)
-            form_p.person = form_u
+        formPerson = forms.formCreateUser(request.POST)
+        formUser = UserCreationForm(request.POST)
+        if formPerson.is_valid() and formUser.is_valid():
+            form_u = formUser.save(commit=False)
+            form_p = formPerson.save(commit=False)
+            form_p.User = form_u
+            form_u.save()
             form_p.save()
-            state = "Success"
-            text = "Your account was created successfully. ✔"
-            return redirect('account:status',state,text,None)
-    else:
-        state = "Error"
-        text = "Your account has encountered an error. Please try again. ✖"
-        type = "signup"
-        return redirect('account:status',state,text,type)
+            args={}
+            args["type"] = "success"
+            args["text"] = "Your account was created successfully. ✔"
+            return redirect('in',args=args)
+        else:
+            args = {}
+            args["type"] = "Error"
+            args["text"] = "Your account has exist."
+            return redirect('home_page:home', args=args)
 
 
-def statusPage(request,state,textState,typeTry):
-    args = {}
-    args["state"] = state
-    args["text"] = textState
-    args["type"] = typeTry
-    return (request,'state.html',args)
 
-
-def signin(request):
-    return None
-
-
-def forget(request):
-    return None
+# def index(requset):

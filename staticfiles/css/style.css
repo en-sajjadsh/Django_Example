@@ -2425,12 +2425,28 @@ section#section3 .skill .titles1 {
 .input-group {
   margin-bottom: 28px;
 }
-.form-horizontal .control-label {
+.form-horizontal label {
   text-align: left;
+  display: block;
 }
 
-.form-horizontal .input-text {
+.form-horizontal input {
   /*float: right;*/
+  border-width: 0 0 1px 0;
+  border-color: #140df2;
+  width: 65%;
+}
+
+.form-horizontal textarea{
+  height: 150px;
+  border-color: #140df2;
+  width: 90%;
+}
+
+.form-horizontal textarea #id_About{
+  height: 150px;
+  border-color: #140df2;
+  width: 100%;
 }
 
 .button {
@@ -12648,12 +12664,12 @@ html, body {
 }
 
 .alert {
-  padding: 20px;
+  /*padding: 20px;*/
   background-color: #f44336;
   color: white;
   opacity: 1;
   transition: opacity 0.6s;
-  margin-bottom: 15px;
+  margin: 80px 150px 15px;
 }
 
 .alert.success {background-color: #04AA6D;}

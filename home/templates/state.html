@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block home %}
+    <section id="intro">
+        <div class="page-wrap d-flex flex-row align-items-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 text-center">
+                        {% if state == 'Success' %}
+                            <span class="display-1 d-block" style="color: #41e713">{{ state }}</span>
+                            <div class="mb-4 lead">{{text}}</div>
+                        {% elif state == "Error" %}
+                            <span class="display-1 d-block" style="color: red">{{ state }}</span>
+                            <div class="mb-4 lead">{{ text }}</div>
+                            {% if type == "signup" %}
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#sign-up">Sing up again</a>
+                            {% elif type == "signin" or type == "exist" %}
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#sign-in">Sing in again</a>
+                            {% elif type == "context" %}
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#contact-us">Send context again</a>
+                            {% endif %}
+                        {% endif %}
+                        <a href="/home" class="btn btn-link" style="margin-top: 30px">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

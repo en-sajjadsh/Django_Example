@@ -7,23 +7,11 @@ from datetime import datetime
 from  django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from . import models,forms
 from . import Enum
-from account import forms as formAccount
+from account import forms as formsAccount
 
 
 def indexWebsite(request):
-    args = {}
-    args["title"] = Enum.Type.Home.value
-    # change news value
-    args["news"] = {'text': 'Error', 'body': "Error"}
-    args["about"] = getAbout()
-    args["contact"] = getContact()
-    args["services"] = getServices()
-    args["form_contant"] = forms.formContact()
-    args["form_signup"] = formAccount.formCreateUser()
-    args["form_password"] = formAccount.formCreateUserPassword()
-    args["form_forget_user"] = formAccount.formForgetUser()
-    args["form_forget_pass"] = formAccount.formForgetPassword()
-
+    args = getValues(request)
 
     return render(request, 'home.html', args)
 
@@ -33,13 +21,45 @@ def contact(request):
         form = forms.formContact(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home_page:home')
+            state = "Success"
+            text = "Your context was sended successful for me. ✔"
+            args = {}
+            args["state"] = state
+            args["text"] = text
+            request.session['status'] = args
+            return redirect('account:state')
     else:
-        return redirect('home_page:home')
+        state = "Error"
+        text = "Your context was sended an error. Please try again. ✖"
+        type = "signup"
+        args = {}
+        args["state"] = state
+        args["text"] = text
+        args["type"] = type
+        request.session['status'] = args
+        return redirect('account:state')
 
 
-def forget(request):
-    pass
+
+def hello(request,val):
+    print("1234"+val)
+    args = getValues(request)
+
+    return render(request, 'home.html', args)
+
+def getValues(request):
+    args = {}
+    args["title"] = Enum.Type.Home.value
+    # change news value
+    args["news"] = {'text': 'Error', 'body': "Error"}
+    args["about"] = getAbout()
+    args["contact"] = getContact()
+    args["services"] = getServices()
+    args["form_contant"] = forms.formContact()
+    args["form_signup"] = formsAccount.formCreateUser()
+    args["form_user"] = UserCreationForm()
+
+    return args
 
 
 def getLimitNews():

@@ -11,7 +11,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('home/', include('home.urls')),
     path('account/',include('account.urls')),
-    # path('learn/',include()),
+    # path('learn/',include('learn.urls')),
     # path('news/',include())
 ]
 

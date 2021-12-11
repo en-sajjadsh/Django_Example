@@ -3,7 +3,6 @@ from . import models
 
 
 admin.site.register(models.Info)
-admin.site.register(models.Password)
 admin.site.register(models.What)
 admin.site.register(models.Skill)
 admin.site.register(models.Education)

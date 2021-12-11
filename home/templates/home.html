@@ -1,0 +1,130 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block home %}
+    <section id="intro" class="clearfix">
+        <div class="container">
+
+            <div class="intro-img">
+                <img src="{% static 'img/intro-img.svg'%}" alt="" class="img-fluid">
+            </div>
+
+            <div class="intro-info">
+                <h2>Start learn <br><span>Programming </span><br>for your business!</h2>
+                <div>
+                    <a href="/learn" class="btn-get-started scrollto">Get Started</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="container">
+        <div class="row ">
+            <main id="main" class="col-lg-8 col-md-12 col-sm-12">
+
+                <section id="main-page">
+                    <div class="container">
+                        {% for k,v in services.items %}
+                            {% if k == "service" %}
+                                {% for val in v.values %}
+                                    <div class="row about-container">
+                                        <div class="col-lg-7 content order-lg-1 order-2">
+                                            <h4>{{ val.name }}</h4>
+                                            <p>{{ val.discription|truncatewords:100 }} ...
+                                            </p>
+
+                                            <div>
+                                                <a class="dropdown-item btn btn-outline-primary scrollto text-primary openservice" data-id="{{ val.type }}" href="/home#services" data-toggle="modal" data-target="#services" data-whatever="">Continue</a>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-5 background order-lg-2 order-1 wow fadeInUp">
+                                            <img class="fab" src="{{ MEDIA_URL}}{{ val.pic }}" title="{{ val.name }}" style="width: 250px">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                        <br>
+                    </div>
+                </section>
+
+                <section id="why-us" class="wow fadeIn">
+                    <div class="container">
+                        <header class="section-header">
+                            <h3>Web site Info</h3>
+                            <p>Laudem latine persequeris id sed, ex fabulas delectus quo. No vel partiendo abhorreant vituperatoribus.</p>
+                        </header>
+
+                        <div class="row counters">
+
+                            <div class="col-lg-4 col-6 text-center">
+                                <span data-toggle="counter-up"></span>
+                                <p>Course</p>
+                            </div>
+
+                            <div class="col-lg-4 col-6 text-center">
+                                    <span data-toggle="counter-up"></span>
+                                <p>Clients</p>
+                            </div>
+
+                            <div class="col-lg-4 col-6 text-center">
+                                <span data-toggle="counter-up"></span>
+                                <p>followers</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+            </main>
+
+            <aside id="aside" class="col-lg-4 col-md-12 col-sm-12">
+                <div  class="news">
+                    <header class="section-header">
+                        <h3>News</h3>
+                    </header>
+
+                    <div>
+                        {% if news.text == "Error" %}
+                            <div class="box">
+                                <p class="description">{{ news.body }} </p>
+                            </div>
+                        {% elif news.text == "Secces" %}
+                            {% for val in news.body %}
+                                <div class="box">
+                                    <h4 class="title"><a href="/news?Id={{ val.id }}">{{ val.title }}</a></h4>
+                                    <p class="description">{{ val.discription |truncatewords:25 }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div>
+                        <a href="/news" class="btn btn-get-started text-primary scrollto">more</a>
+                    </div>
+                    <div class="align-end">
+                        {% now "j M Y" %}
+                    </div>
+                </div>
+
+    {#            <div class="services">#}
+    {#                <header class="section-header">#}
+    {#                    <h3>Services</h3>#}
+    {#                    <p>service</p>#}
+    {#                </header>#}
+    {#                <div>#}
+    {#                    <div class="box">#}
+    {#                        <h4 class="title"><a class="dropdown-item" href="#Java" data-toggle="modal" data-target="#services" data-whatever="Java">Sed ut perspiciatis</a></h4>#}
+    {#                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>#}
+    {#                    </div>#}
+    {#               </div>#}
+    {#            </div>#}
+            </aside>
+        </div>
+    </div>
+
+{% endblock %}

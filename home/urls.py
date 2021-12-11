@@ -10,5 +10,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns, urlpatterns
 app_name = 'home_page'
 urlpatterns = [
     path('', views.indexWebsite,name='home'),
+    path('home', views.hello , name='home1'),
     path('contact', views.contact,name='contact'),
 ]

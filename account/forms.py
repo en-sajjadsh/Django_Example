@@ -3,8 +3,8 @@ from . import models
 
 class formCreateUser(forms.ModelForm):
     class Meta:
-        model = models.Info_Person
-        fields = "__all__"
+        model = models.Person
+        fields = 'fname','lname','specialty','born','phone','email'
         labels = {
             'fname' : 'First Name',
             'lname' : 'Last Name',
@@ -21,58 +21,3 @@ class formCreateUser(forms.ModelForm):
             'email' : forms.EmailInput()
         }
 
-
-
-class formCreateUserPassword(forms.ModelForm):
-    class Meta:
-        model = models.Password
-        fields = [
-            'user',
-            'password'
-        ]
-        labels = {
-            'user' : 'Username',
-            'password' : 'Password'
-        }
-        widgets = {
-            'password' : forms.PasswordInput()
-        }
-
-
-
-class formCheckUserPass(forms.ModelForm):
-    class Meta:
-        model = models.Password
-        fields = [
-            'user',
-            'password'
-        ]
-        labels = {
-            'user': 'Username',
-            'password': 'Password'
-        }
-        widgets = {
-            'password': forms.PasswordInput()
-        }
-
-
-class formForgetPassword(forms.ModelForm):
-    class Meta:
-        model = models.Password
-        fields = [
-            'user'
-        ]
-        labels = {
-            'user': 'Username'
-        }
-
-
-class formForgetUser(forms.ModelForm):
-    class Meta:
-        model = models.Info_Person
-        fields = [
-            'email'
-        ]
-        labels = {
-            'email' : 'Email'
-        }

@@ -70,6 +70,10 @@
 {#        <div class="spinner-grow text-primary"></div>#}
 {#    </div>#}
 
+<div class="alert alert-dismissible fixed-top">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+</div>
+
 <header id="header" class="fixed-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
@@ -141,17 +145,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/home#contact-us" data-toggle="modal" data-target="#contact-us">Contact us</a>
                     </li>
-
+{#                    {% if user.is_a %}#}
                     <li class="nav-item">
                         <a class="nav-link" href="/home#singin" data-toggle="modal" data-target="#sign-in">Sing in</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/home#singup" data-toggle="modal" data-target="#sign-up">Sing up</a>
                     </li>
-
+{#                    {% else %}#}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="navbarAccount" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Account
+{#                            {{ user }}#}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarAccount">
                             <a class="dropdown-item" href="#"></a>
@@ -159,9 +163,10 @@
                             <a class="dropdown-item" href="#"></a>
                             <div class="dropdown-divider"></div>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="/exit">Exit</a>
+                            <a class="dropdown-item" href="">Log Out</a>
                         </div>
                     </li>
+{#                    {% endif %}#}
                 </ul>
             </div>
         </nav>
@@ -396,7 +401,7 @@
                             </div>
                             <div class="col-lg-7 col-md-12 col-sm-12">
                                 <h5>Contact Form </h5>
-                                <form name="form" action="/home/contact" method="post" class="form-horizontal contact-form" onsubmit="return validateForm()">
+                                <form name="form" action="{% url 'home_page:contact' %}" method="post" class="form-horizontal contact-form" onsubmit="return validateForm()">
                                     {% csrf_token %}
                                     {{ form_contant }}
 {#                                    {% csrf_token %}#}
@@ -443,21 +448,9 @@
             </div>
             <div class="modal-body">
                 <div class="col-lg-6 col-md-12 col-sm-12 sign">
-                    <form name="formsignin" action="/account/signin" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignin()">
-                        {% csrf_token %}
-                        {{ form_password }}
-{#                        <div class="form-group">#}
-{#                            <label class="col-sm-2 control-label">username</label>#}
-{#                            <div class="col-sm-10 input-text">#}
-{#                                <input type="text" class="contact-name" name="username" />#}
-{#                            </div>#}
-{#                        </div>#}
-{#                        <div class="form-group">#}
-{#                            <label class="col-sm-2 control-label">password</label>#}
-{#                            <div class="col-sm-10 input-text">#}
-{#                                <input type="password" class="contact-email" name="password" />#}
-{#                            </div>#}
-{#                        </div>#}
+                    <form name="formsignin" action="" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignin()">
+{#                        {% csrf_token %}#}
+{#                        {{ form_signin }}#}
                         <div class="form-group">
                             <div class="col-sm-10 col-sm-offset-2">
                                 <button type="submit" id="btn_signin" class="btn btn-primary">sign in</button>
@@ -489,21 +482,13 @@
             </div>
             <div class="modal-body">
                 <div class="col-lg-6 col-md-12 col-sm-12 sign">
-                    <form name="form-signup" action="/account/signup" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignup()">
+                    <form name="form-signup" action="{% url 'account:signup' %}" method="post" class="form-horizontal contact-form" onsubmit="return validateFormSignup()">
                         {% csrf_token %}
                         {{ form_signup }}
-                        {{ form_password }}
-                        <label for="">Check Password</label>
-                        <input type="password" id="confirm-password" name="confrim-password" maxlength="50">
+                        {{ form_user }}
                         <span id="msg-confrim"></span>
-                        <div id="message">
-                            <h3>Password must contain the following:</h3>
-                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
-                            <p id="number" class="invalid">A <b>number</b></p>
-                            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-                        </div>
-
+{#                        <label for="">Check Password</label>#}
+{#                        <input type="password" id="confirm-password" name="confrim-password" maxlength="50">#}
 {#                        <div class="form-group">#}
 {#                            <label class="col-sm-2 control-label" for="confirm-password">check password</label>#}
 {#                            <div class="col-sm-10 input-text">#}
@@ -547,6 +532,15 @@
                         </div>
                     </form>
                 </div>
+{#                <div class="col-lg-6 col-md-12 col-sm-12">#}
+{#                    <div id="message">#}
+{#                        <h3>Password must contain the following:</h3>#}
+{#                        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>#}
+{#                        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>#}
+{#                        <p id="number" class="invalid">A <b>number</b></p>#}
+{#                        <p id="length" class="invalid">Minimum <b>8 characters</b></p>#}
+{#                    </div>#}
+{#                </div>#}
             </div>
         </div>
     </div>
@@ -563,9 +557,9 @@
             <div class="modal-body">
                 <div class="col-lg-6 col-md-12 col-sm-12 sign">
                     <form name="formforget" action="/account/forget" method="post" class="form-horizontal contact-form" onsubmit="return validateFormForget()">
-                        {% csrf_token %}
-                        {{ form_forget_pass }}
-                        {{ form_forget_user }}
+{#                        {% csrf_token %}#}
+{#                        {{ form_forget_pass }}#}
+{#                        {{ form_forget_user }}#}
 {#                        <div class="form-group">#}
 {#                            <label class="col-sm-2 control-label">email</label>#}
 {#                            <div class="col-sm-10 input-text">#}
@@ -717,11 +711,13 @@
 <!-- google maps -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <script>
-    $('#s-password, #confirm-password').on('keyup', function () {
-        if ($('#s-password').val() === $('#confirm-password').val()) {
-            $('#msg-confrim').html('Matching').css('color', 'green');
-        } else
-            $('#msg-confrim').html('Not Matching').css('color', 'red');
+    $(document).ready(function (){
+        $('#id_password1, #id_password2').on('keyup', function () {
+            if ($('#id_password1').val() === $('#id_password').val()) {
+                $('#msg-confrim').html('Matching').css('color', 'green');
+            } else
+                $('#msg-confrim').html('Not Matching').css('color', 'red');
+        });
     });
 </script>
 <script>
@@ -793,17 +789,17 @@
             alert("Email must not be empty.");
             return false;
         }
-        var s_user = document.forms["signup"]["id-user"].value;
+        var s_user = document.forms["signup"]["id-username"].value;
         if (s_user === "" ) {
             alert("Email must not be empty.");
             return false;
         }
-        var s_pass = document.forms["signup"]["id-password"].value;
+        var s_pass = document.forms["signup"]["id-password1"].value;
         if (s_pass === ""){
             alert("Email must not be empty.");
             return false;
         }
-        var sc_pass = document.forms["signup"]["confirm-password"].value;
+        var sc_pass = document.forms["signup"]["id_password2"].value;
         if (sc_pass === ""){
             alert("Email must not be empty.");
             return false;
@@ -825,7 +821,7 @@
     }
 </script>
 <script>
-    var myInput = document.getElementById("confirm-password");
+    var myInput = document.getElementById("id_passwor");
     var letter = document.getElementById("letter");
     var capital = document.getElementById("capital");
     var number = document.getElementById("number");
