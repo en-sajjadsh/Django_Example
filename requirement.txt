@@ -19,7 +19,9 @@ cowsay==4.0
 cycler==0.10.0
 decorator==4.4.2
 distlib==0.3.2
+dj-database-url==0.5.0
 Django==3.2.6
+django-heroku==0.3.1
 django-popup-view-field==0.6.1
 Faker==9.8.0
 filelock==3.0.12
@@ -27,6 +29,7 @@ future==0.18.2
 futures==3.1.0
 goslate==1.5.1
 gTTS==2.2.3
+gunicorn==20.1.0
 huepy==1.2.1
 idna==3.2
 imageio==2.9.0
@@ -54,12 +57,14 @@ pbr==5.6.0
 pefile==2021.5.24
 phonenumbers==8.12.36
 Pillow==8.3.2
+pipenv==2021.11.23
 platformdirs==2.2.0
 pluggy==1.0.0
 plyer==2.0.0
 proglog==0.1.9
 protobuf==3.17.3
 psutil==5.8.0
+psycopg2==2.9.2
 py==1.10.0
 py-notifier==0.3.2
 pyaes==1.6.1
@@ -131,6 +136,7 @@ urllib3==1.26.6
 virtualenv==20.7.0
 virtualenv-clone==0.5.6
 virtualenvwrapper==4.8.4
+whitenoise==5.3.0
 wikipedia==1.4.0
 win10toast==0.9
 WMI==1.5.1
